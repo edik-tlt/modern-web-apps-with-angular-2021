@@ -1,0 +1,10 @@
+<div mat-subheader>Items</div>
+
+<mat-selection-list [multiple]="false" *ngIf="feed$ | async as feed">
+    <mat-list-option
+        *ngFor="let item of feed.items"
+        [value]="item"
+    >
+        {{item.title}}
+    </mat-list-option>
+</mat-selection-list>

@@ -1,0 +1,27 @@
+<div class="v100-64">
+    <mat-drawer-container class="v100">
+        <mat-drawer #drawer class="feed-list-panel" opened [mode]="drawerMode">
+            <feed-list></feed-list>
+        </mat-drawer>
+
+        <div class="reading-container v100">
+            <mat-grid-list class="v100" cols="4" rowHeight="1:1">
+                <mat-grid-tile class="v100">
+                    <div class="v100 w100 overflow-scroll">
+                        <router-outlet name="feed-items"></router-outlet>
+                    </div>
+                </mat-grid-tile>
+                <mat-grid-tile class="v100" [colspan]="3">
+                    <div class="v100 w100 overflow-scroll">
+                        <router-outlet name="content"></router-outlet>
+                    </div>
+                </mat-grid-tile>
+            </mat-grid-list>
+        </div>
+
+        <mat-drawer #settings class="w100" position="end" mode="side">
+            <feed-settings></feed-settings>
+        </mat-drawer>
+    </mat-drawer-container>
+
+</div>

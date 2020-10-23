@@ -1,0 +1,13 @@
+<div mat-subheader>Items</div>
+
+<mat-selection-list [multiple]="false" *ngIf="feed$ | async as feed">
+    <mat-list-option
+        *ngFor="let item of feed.items"
+        [value]="item"
+        [routerLink]="['/feeds', {outlets: { 'content' :['item', item.id] }}]"
+        routerLinkActive="mat-list-single-selected-option"
+        [state]="item"
+    >
+        {{item.title}}
+    </mat-list-option>
+</mat-selection-list>

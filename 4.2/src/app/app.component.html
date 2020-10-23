@@ -1,0 +1,17 @@
+<mat-toolbar style="justify-content: space-between;" color="primary">
+
+  <div>
+    <button mat-icon-button mat-button (click)="panels.toggleFeeds()">
+      <mat-icon>list</mat-icon>
+    </button>
+  
+    <span>ngReader</span>
+  </div>
+
+  <button mat-icon-button mat-button (click)="panels.toggleSettings()">
+    <mat-icon>settings</mat-icon>
+  </button>
+  
+</mat-toolbar>
+
+<panel-container #panels></panel-container>

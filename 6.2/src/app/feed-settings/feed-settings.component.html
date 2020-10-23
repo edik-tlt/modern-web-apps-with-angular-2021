@@ -1,0 +1,32 @@
+<div class="settings-container">
+    <h1>Settings</h1>
+
+    <div>
+        <mat-form-field appearance="standard">
+            <mat-label>Feed URL</mat-label>
+            <input #feedUrl matInput type="text">
+        </mat-form-field>
+        <div>
+            <button mat-flat-button color="primary"
+                (click)="service.addFeed(feedUrl.value)">Add Feed</button>
+        </div>
+    </div>
+
+    <mat-divider></mat-divider>
+
+    <div>
+        <mat-selection-list #feedSelection>
+            <mat-list-option
+                *ngFor="let feed of service.feeds"
+                [value]="feed"
+
+            >
+                {{feed.name}}
+            </mat-list-option>
+        </mat-selection-list>
+    </div>
+
+    <div>
+        <button mat-flat-button color="warn" (click)="removeFeeds()">Remove Selected Feeds</button>
+    </div>
+</div>
